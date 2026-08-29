@@ -10,7 +10,6 @@ body {
     color: #333;
 }
 
-/* 1. Navbar Styles */
 .navbar {
     display: flex;
     justify-content: space-between;
@@ -45,16 +44,14 @@ body {
     background-color: #2980b9;
 }
 
-/* 2. Main Centered Feed */
 #container {
     display: flex;
     flex-direction: column;
-    align-items: center; /* Horizontally centers all blog cards */
+    align-items: center;
     padding: 40px 20px;
     gap: 24px;
 }
 
-/* 3. Blog Post Box/Card */
 .box {
     background-color: #ffffff;
     width: 100%;
@@ -71,7 +68,6 @@ body {
     box-shadow: 0 6px 16px rgba(0, 0, 0, 0.08);
 }
 
-/* Author Info Header */
 .author-info {
     display: flex;
     align-items: center;
@@ -103,7 +99,6 @@ body {
     color: #7f8c8d;
 }
 
-/* Blog Content */
 .blog-title {
     font-size: 1.3rem;
     color: #1a252f;

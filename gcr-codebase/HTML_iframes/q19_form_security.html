@@ -5,18 +5,16 @@
     <title>Question 19 - HTML Form Security Attributes</title>
 </head>
 <body>
-    <!-- Question 19: Form security attributes autocomplete="off" and required -->
+
     <h1>Secure Login Form</h1>
     <form action="#" method="post" autocomplete="off">
-        <!-- Sensitive username input -->
+
         <label for="secure_username">Username:</label><br>
         <input type="text" id="secure_username" name="secure_username" required><br><br>
 
-        <!-- Sensitive password input -->
         <label for="secure_password">Password:</label><br>
         <input type="password" id="secure_password" name="secure_password" required><br><br>
 
-        <!-- Sensitive pin input -->
         <label for="security_pin">Security PIN:</label><br>
         <input type="password" id="security_pin" name="security_pin" maxlength="6" required><br><br>
 
@@ -24,7 +22,7 @@
     </form>
 
     <hr>
-    <!-- Explanation note on security benefits of autocomplete="off" -->
+
     <p>
         <strong>Security Note:</strong> Turning off autocomplete (<code>autocomplete="off"</code>) improves security by preventing web browsers from automatically caching, saving, and autofilling sensitive user data (such as passwords, credit card numbers, or security PINs). On shared or public computers, this mitigates the risk of unauthorized users gaining access to confidential information previously entered into the browser.
     </p>
