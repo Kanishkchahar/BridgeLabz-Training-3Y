@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Q2: Student Registration Form</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background: #f4f6f9;
+    }
+    .form-card {
+      max-width: 420px;
+      margin: 0 auto;
+      background: #fff;
+      padding: 24px;
+      border-radius: 8px;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+    h2 {
+      margin-top: 0;
+      color: #333;
+    }
+    .form-group {
+      margin-bottom: 16px;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: 600;
+      color: #444;
+    }
+    input {
+      width: 100%;
+      padding: 10px;
+      border: 2px solid #ccc;
+      border-radius: 4px;
+      box-sizing: border-box;
+      outline: none;
+      transition: border-color 0.2s;
+    }
+    .error-text {
+      color: #dc3545;
+      font-size: 0.85rem;
+      margin-top: 4px;
+      display: block;
+      min-height: 18px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #007bff;
+      border: none;
+      color: white;
+      font-size: 1rem;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #0056b3;
+    }
+    .status-msg {
+      margin-top: 14px;
+      font-weight: bold;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="form-card">
+    <h2>Student Registration</h2>
+    <form id="studentForm" novalidate>
+      <div class="form-group">
+        <label for="name">Full Name</label>
+        <input type="text" id="name" placeholder="John Doe">
+        <span class="error-text" id="nameError"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="email">Email</label>
+        <input type="email" id="email" placeholder="john@example.com">
+        <span class="error-text" id="emailError"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="phone">Phone Number (10 digits)</label>
+        <input type="text" id="phone" placeholder="9876543210">
+        <span class="error-text" id="phoneError"></span>
+      </div>
+
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" placeholder="e.g. Secret#123">
+        <span class="error-text" id="passwordError"></span>
+      </div>
+
+      <button type="submit">Register</button>
+      <div class="status-msg" id="formMessage"></div>
+    </form>
+  </div>
+
+  <script src="student-form-validator.js"></script>
+</body>
+</html>

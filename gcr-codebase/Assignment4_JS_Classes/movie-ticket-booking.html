@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Q5: Movie Ticket Booking</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 40px;
+      background: #f7f9fc;
+    }
+    .booking-card {
+      max-width: 440px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 24px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+    }
+    h2 {
+      margin-top: 0;
+      color: #2c3e50;
+    }
+    .field {
+      margin-bottom: 14px;
+    }
+    label {
+      display: block;
+      margin-bottom: 6px;
+      font-weight: bold;
+      color: #333;
+    }
+    input {
+      width: 100%;
+      padding: 9px;
+      box-sizing: border-box;
+      border: 1px solid #ccc;
+      border-radius: 4px;
+    }
+    button {
+      width: 100%;
+      padding: 10px;
+      background: #e50914;
+      color: #fff;
+      font-weight: bold;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+    button:hover {
+      background: #b80710;
+    }
+    #bookingErrors {
+      color: #dc3545;
+      background: #fdf2f2;
+      border: 1px solid #f5c6cb;
+      padding: 10px;
+      border-radius: 4px;
+      margin-top: 15px;
+      display: none;
+      font-size: 0.9rem;
+    }
+    #ticketDetails {
+      margin-top: 20px;
+      display: none;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="booking-card">
+    <h2>🎬 Cinema Ticket Booking</h2>
+    <form id="bookingForm" novalidate>
+      <div class="field">
+        <label for="custName">Customer Name (Alphabets only)</label>
+        <input type="text" id="custName" placeholder="e.g. John Doe">
+      </div>
+
+      <div class="field">
+        <label for="custEmail">Email Address</label>
+        <input type="email" id="custEmail" placeholder="e.g. john@mail.com">
+      </div>
+
+      <div class="field">
+        <label for="numSeats">Number of Seats (1 - 10)</label>
+        <input type="number" id="numSeats" min="1" max="10" placeholder="e.g. 2">
+      </div>
+
+      <button type="submit">Book Tickets</button>
+
+      <div id="bookingErrors"></div>
+      <div id="ticketDetails"></div>
+    </form>
+  </div>
+
+  <script src="movie-ticket-booking.js"></script>
+</body>
+</html>
