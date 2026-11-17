@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assignment 7: DOM Manipulation Index</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8fafc;
+            padding: 40px;
+            color: #1e293b;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 32px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+        }
+        h1 {
+            margin-top: 0;
+            color: #0f172a;
+        }
+        p {
+            color: #64748b;
+        }
+        .grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 14px;
+            margin-top: 24px;
+        }
+        .card-link {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 16px 20px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            text-decoration: none;
+            color: #1e293b;
+            font-weight: 600;
+            transition: all 0.2s ease;
+        }
+        .card-link:hover {
+            border-color: #3b82f6;
+            background: #f0f7ff;
+            color: #2563eb;
+            transform: translateX(4px);
+        }
+        .badge {
+            font-size: 12px;
+            background: #e2e8f0;
+            padding: 4px 8px;
+            border-radius: 4px;
+            color: #475569;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h1>Assignment 7: DOM Manipulation Showcase</h1>
+    <p>Select any question below to test the live interactive implementation:</p>
+
+    <div class="grid">
+        <a class="card-link" href="q1_dynamic_product_list.html">
+            <span>1. Dynamic Product List Manager (Event Delegation & Inline Edit)</span>
+            <span class="badge">Open Demo &rarr;</span>
+        </a>
+        <a class="card-link" href="q2_live_character_counter.html">
+            <span>2. Live Character Counter with Warning & preventDefault()</span>
+            <span class="badge">Open Demo &rarr;</span>
+        </a>
+        <a class="card-link" href="q3_multistep_form.html">
+            <span>3. Multi-Step Form with Next/Back & Validation</span>
+            <span class="badge">Open Demo &rarr;</span>
+        </a>
+        <a class="card-link" href="q4_theme_switcher.html">
+            <span>4. Theme Switcher Using setAttribute() and Custom Attributes</span>
+            <span class="badge">Open Demo &rarr;</span>
+        </a>
+        <a class="card-link" href="q5_image_gallery_modal.html">
+            <span>5. Image Gallery with Modal Preview & stopPropagation()</span>
+            <span class="badge">Open Demo &rarr;</span>
+        </a>
+        <a class="card-link" href="q6_realtime_table_filter.html">
+            <span>6. Real-Time Table Filter Using input Event</span>
+            <span class="badge">Open Demo &rarr;</span>
+        </a>
+        <a class="card-link" href="q7_mouse_coordinates_logger.html">
+            <span>7. Detect Mouse Path & Coordinates Logger</span>
+            <span class="badge">Open Demo &rarr;</span>
+        </a>
+        <a class="card-link" href="q8_custom_dropdown.html">
+            <span>8. Custom Dropdown Using Capturing Phase (No &lt;select&gt;)</span>
+            <span class="badge">Open Demo &rarr;</span>
+        </a>
+        <a class="card-link" href="q9_form_submit_blocker.html">
+            <span>9. Form Submit Blocker with preventDefault() & Live Errors</span>
+            <span class="badge">Open Demo &rarr;</span>
+        </a>
+    </div>
+</div>
+
+</body>
+</html>

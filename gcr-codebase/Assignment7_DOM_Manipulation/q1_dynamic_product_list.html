@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q1: Dynamic Product List Manager</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f0f2f5;
+            padding: 30px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            background: #fff;
+            padding: 24px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+            width: 100%;
+            max-width: 500px;
+        }
+        h2 {
+            margin-top: 0;
+            color: #1a202c;
+        }
+        .input-group {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+        input[type="text"] {
+            flex: 1;
+            padding: 10px 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 14px;
+            outline: none;
+        }
+        input[type="text"]:focus {
+            border-color: #3b82f6;
+        }
+        button {
+            padding: 10px 16px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 14px;
+            transition: opacity 0.2s;
+        }
+        button:hover {
+            opacity: 0.9;
+        }
+        .btn-add {
+            background: #2563eb;
+            color: white;
+        }
+        ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        li {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 12px;
+            border-bottom: 1px solid #e2e8f0;
+            gap: 10px;
+        }
+        .product-text {
+            flex: 1;
+            font-size: 15px;
+            color: #334155;
+            word-break: break-all;
+        }
+        .edit-input {
+            flex: 1;
+            padding: 6px 10px;
+            font-size: 14px;
+            border: 1px solid #3b82f6;
+            border-radius: 4px;
+            outline: none;
+        }
+        .actions {
+            display: flex;
+            gap: 6px;
+        }
+        .btn-edit {
+            background: #f59e0b;
+            color: white;
+        }
+        .btn-save {
+            background: #10b981;
+            color: white;
+        }
+        .btn-delete {
+            background: #ef4444;
+            color: white;
+        }
+        .empty-message {
+            text-align: center;
+            color: #94a3b8;
+            padding: 20px 0;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Product List Manager</h2>
+    <p style="font-size: 13px; color: #64748b; margin-top: -6px;">
+        Add, inline-edit, or delete products using event delegation on the parent &lt;ul&gt;.
+    </p>
+
+    <div class="input-group">
+        <input type="text" id="new-product-input" placeholder="Enter product name..." />
+        <button id="add-product-btn" class="btn-add">Add Product</button>
+    </div>
+
+    <ul id="product-list">
+        <!-- Dynamically managed items -->
+    </ul>
+    <div id="empty-notice" class="empty-message">No products in list. Add one above!</div>
+</div>
+
+<script src="q1_dynamic_product_list.js"></script>
+</body>
+</html>

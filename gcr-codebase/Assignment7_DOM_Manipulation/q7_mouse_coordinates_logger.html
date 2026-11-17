@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q7: Mouse Coordinates Logger</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f1f5f9;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        h2 {
+            margin-bottom: 6px;
+            color: #1e293b;
+        }
+        .info-panel {
+            font-size: 15px;
+            color: #475569;
+            margin-bottom: 16px;
+            display: flex;
+            gap: 20px;
+        }
+        .coord-badge {
+            background: #e2e8f0;
+            padding: 6px 14px;
+            border-radius: 6px;
+            font-weight: 600;
+            color: #0f172a;
+        }
+        #tracking-box {
+            width: 400px;
+            height: 400px;
+            background: #ffffff;
+            border: 2px dashed #3b82f6;
+            border-radius: 12px;
+            position: relative;
+            overflow: hidden;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            cursor: crosshair;
+        }
+        .red-dot {
+            position: absolute;
+            width: 12px;
+            height: 12px;
+            background-color: #ef4444;
+            border: 2px solid #ffffff;
+            border-radius: 50%;
+            transform: translate(-50%, -50%);
+            box-shadow: 0 2px 6px rgba(239, 68, 68, 0.5);
+            pointer-events: none;
+            animation: popIn 0.2s ease-out;
+        }
+        @keyframes popIn {
+            0% { transform: translate(-50%, -50%) scale(0); }
+            100% { transform: translate(-50%, -50%) scale(1); }
+        }
+        .instructions {
+            margin-top: 14px;
+            font-size: 13px;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Mouse Path & Coordinates Logger</h2>
+<div class="info-panel">
+    <div class="coord-badge" id="client-coords">clientX: 0 | clientY: 0</div>
+    <div class="coord-badge" id="offset-coords">offset X: 0 | offset Y: 0</div>
+</div>
+
+<div id="tracking-box">
+    <!-- Red dots dropped on double click -->
+</div>
+
+<div class="instructions">
+    Move cursor inside box to track coordinates. <strong>Double-click</strong> anywhere inside to place a red dot.
+</div>
+
+<script src="q7_mouse_coordinates_logger.js"></script>
+</body>
+</html>

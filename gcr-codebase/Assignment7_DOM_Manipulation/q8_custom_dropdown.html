@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q8: Custom Dropdown (No select Tag)</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8fafc;
+            padding: 50px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            background: #fff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            width: 100%;
+            max-width: 400px;
+            text-align: center;
+        }
+        h2 {
+            margin-top: 0;
+            color: #1e293b;
+        }
+        .dropdown-wrapper {
+            position: relative;
+            margin-top: 20px;
+            text-align: left;
+        }
+        .dropdown-btn {
+            width: 100%;
+            padding: 12px 16px;
+            background: #f1f5f9;
+            border: 1.5px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 15px;
+            color: #334155;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            outline: none;
+            transition: all 0.2s;
+        }
+        .dropdown-btn:hover {
+            background: #e2e8f0;
+        }
+        .arrow {
+            transition: transform 0.2s;
+        }
+        .dropdown-wrapper.open .arrow {
+            transform: rotate(180deg);
+        }
+        .dropdown-menu {
+            position: absolute;
+            top: 105%;
+            left: 0;
+            width: 100%;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0,0,0,0.1);
+            list-style: none;
+            padding: 6px 0;
+            margin: 0;
+            display: none;
+            z-index: 100;
+        }
+        .dropdown-wrapper.open .dropdown-menu {
+            display: block;
+        }
+        .dropdown-item {
+            padding: 10px 16px;
+            font-size: 14px;
+            color: #475569;
+            cursor: pointer;
+            transition: background 0.15s;
+        }
+        .dropdown-item:hover {
+            background: #eff6ff;
+            color: #2563eb;
+        }
+        .selected-log {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Custom Dropdown</h2>
+    <p style="font-size: 13px; color: #64748b;">
+        Created strictly using custom HTML/JS (no &lt;select&gt;). Click outside closes via capturing phase.
+    </p>
+
+    <div class="dropdown-wrapper" id="dropdown-wrapper">
+        <button type="button" class="dropdown-btn" id="dropdown-toggle">
+            <span id="selected-text">Select a Framework</span>
+            <span class="arrow">&#9662;</span>
+        </button>
+
+        <ul class="dropdown-menu" id="dropdown-menu">
+            <li class="dropdown-item" data-value="React.js">React.js</li>
+            <li class="dropdown-item" data-value="Vue.js">Vue.js</li>
+            <li class="dropdown-item" data-value="Angular">Angular</li>
+            <li class="dropdown-item" data-value="Next.js">Next.js</li>
+            <li class="dropdown-item" data-value="Svelte">Svelte</li>
+        </ul>
+    </div>
+
+    <div class="selected-log" id="selected-log">
+        Selected: <strong>None</strong>
+    </div>
+</div>
+
+<script src="q8_custom_dropdown.js"></script>
+</body>
+</html>

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q9: Form Submit Blocker with Live Errors</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f1f5f9;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+        }
+        .form-card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            width: 100%;
+            max-width: 420px;
+        }
+        h2 {
+            margin-top: 0;
+            color: #1e293b;
+        }
+        .form-group {
+            margin-bottom: 18px;
+        }
+        label {
+            display: block;
+            margin-bottom: 6px;
+            font-weight: 600;
+            font-size: 14px;
+            color: #334155;
+        }
+        input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px 12px;
+            border: 1.5px solid #cbd5e1;
+            border-radius: 6px;
+            font-size: 14px;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        input.input-error {
+            border-color: #ef4444;
+            background-color: #fef2f2;
+        }
+        input.input-valid {
+            border-color: #10b981;
+        }
+        .error-message {
+            color: #dc2626;
+            font-size: 12px;
+            margin-top: 4px;
+            display: none;
+        }
+        .btn-submit {
+            width: 100%;
+            padding: 12px;
+            background: #2563eb;
+            color: #ffffff;
+            border: none;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background 0.2s;
+        }
+        .btn-submit:hover {
+            background: #1d4ed8;
+        }
+        .success-banner {
+            display: none;
+            margin-top: 20px;
+            padding: 14px;
+            background: #dcfce7;
+            color: #166534;
+            border: 1px solid #86efac;
+            border-radius: 6px;
+            font-weight: 600;
+            text-align: center;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-card">
+    <h2>Registration Form</h2>
+    <p style="font-size: 13px; color: #64748b; margin-top: -6px;">
+        Demonstrating preventDefault(), live error correction, and success confirmation.
+    </p>
+
+    <form id="registration-form" novalidate>
+        <div class="form-group">
+            <label for="user-name">Full Name <span style="color:#ef4444;">*</span></label>
+            <input type="text" id="user-name" placeholder="John Doe" />
+            <div class="error-message" id="name-error">Name is required.</div>
+        </div>
+
+        <div class="form-group">
+            <label for="user-email">Email Address <span style="color:#ef4444;">*</span></label>
+            <input type="email" id="user-email" placeholder="john@example.com" />
+            <div class="error-message" id="email-error">Email is required and must contain '@'.</div>
+        </div>
+
+        <div class="form-group">
+            <label for="user-password">Password <span style="color:#ef4444;">*</span></label>
+            <input type="password" id="user-password" placeholder="At least 6 characters" />
+            <div class="error-message" id="password-error">Password must be at least 6 characters.</div>
+        </div>
+
+        <button type="submit" class="btn-submit">Submit Registration</button>
+    </form>
+
+    <div class="success-banner" id="success-message">
+        Form Submitted Successfully!
+    </div>
+</div>
+
+<script src="q9_form_submit_blocker.js"></script>
+</body>
+</html>

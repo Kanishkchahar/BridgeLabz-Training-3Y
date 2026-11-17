@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q2: Live Character Counter with Warning</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8fafc;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+        }
+        .card {
+            background: #ffffff;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            padding: 28px;
+            width: 100%;
+            max-width: 480px;
+        }
+        h2 {
+            margin-top: 0;
+            color: #1e293b;
+        }
+        textarea {
+            width: 100%;
+            box-sizing: border-box;
+            height: 120px;
+            padding: 12px;
+            border: 1.5px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 14px;
+            resize: vertical;
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        textarea:focus {
+            border-color: #3b82f6;
+        }
+        .footer-bar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 12px;
+        }
+        .counter-badge {
+            font-size: 14px;
+            font-weight: 600;
+            padding: 4px 10px;
+            border-radius: 20px;
+            background: #e2e8f0;
+            color: #334155;
+            transition: all 0.25s ease;
+        }
+        .counter-badge.warning {
+            background: #fef08a;
+            color: #854d0e;
+        }
+        .counter-badge.danger {
+            background: #fecaca;
+            color: #991b1b;
+        }
+        .btn-reset {
+            background: #64748b;
+            color: #fff;
+            border: none;
+            padding: 8px 18px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+        }
+        .btn-reset:hover {
+            background: #475569;
+        }
+    </style>
+</head>
+<body>
+
+<div class="card">
+    <h2>Live Character Counter</h2>
+    <p style="color: #64748b; font-size: 14px;">
+        Type below. Maximum limit: <strong>100 characters</strong>.
+    </p>
+
+    <textarea id="message-input" placeholder="Type your message here..."></textarea>
+
+    <div class="footer-bar">
+        <span id="counter" class="counter-badge">Remaining: 100</span>
+        <button id="reset-btn" class="btn-reset">Reset</button>
+    </div>
+</div>
+
+<script src="q2_live_character_counter.js"></script>
+</body>
+</html>

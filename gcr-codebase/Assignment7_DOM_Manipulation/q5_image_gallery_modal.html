@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q5: Image Gallery with Modal Preview</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f1f5f9;
+            margin: 0;
+            padding: 30px;
+        }
+        h2 {
+            text-align: center;
+            color: #1e293b;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 20px;
+            max-width: 900px;
+            margin: 30px auto;
+        }
+        .gallery-item {
+            background: #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            cursor: pointer;
+            transition: transform 0.25s ease, box-shadow 0.25s ease;
+        }
+        .gallery-item:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 24px rgba(0,0,0,0.15);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 160px;
+            object-fit: cover;
+            display: block;
+        }
+        .gallery-caption {
+            padding: 10px;
+            text-align: center;
+            font-size: 14px;
+            font-weight: 600;
+            color: #475569;
+        }
+
+        /* Modal Overlay (Background) */
+        .modal-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.75);
+            display: none;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        .modal-overlay.open {
+            display: flex;
+            opacity: 1;
+        }
+
+        /* Modal Content Box */
+        .modal-card {
+            background: #ffffff;
+            border-radius: 12px;
+            padding: 16px;
+            max-width: 600px;
+            width: 90%;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+            text-align: center;
+            position: relative;
+        }
+        .modal-card img {
+            max-width: 100%;
+            max-height: 400px;
+            border-radius: 8px;
+            object-fit: cover;
+        }
+        .modal-title {
+            margin-top: 12px;
+            font-size: 16px;
+            color: #1e293b;
+        }
+        .btn-close {
+            position: absolute;
+            top: 10px;
+            right: 14px;
+            background: transparent;
+            border: none;
+            font-size: 24px;
+            cursor: pointer;
+            color: #64748b;
+        }
+    </style>
+</head>
+<body>
+
+<h2>Image Gallery (6 Images)</h2>
+<p style="text-align: center; color: #64748b;">Click on any image to open modal preview. Click outside to close.</p>
+
+<div class="gallery-grid" id="gallery">
+    <div class="gallery-item" data-caption="Mountain Sunset">
+        <img src="https://images.unsplash.com/photo-1506744038136-46273834b3fb?w=600" alt="Mountain Sunset">
+        <div class="gallery-caption">Mountain Sunset</div>
+    </div>
+    <div class="gallery-item" data-caption="Forest Trail">
+        <img src="https://images.unsplash.com/photo-1448375240586-882707db888b?w=600" alt="Forest Trail">
+        <div class="gallery-caption">Forest Trail</div>
+    </div>
+    <div class="gallery-item" data-caption="Ocean Waves">
+        <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600" alt="Ocean Waves">
+        <div class="gallery-caption">Ocean Waves</div>
+    </div>
+    <div class="gallery-item" data-caption="Desert Dunes">
+        <img src="https://images.unsplash.com/photo-1509316975850-ff9c5deb0cd9?w=600" alt="Desert Dunes">
+        <div class="gallery-caption">Desert Dunes</div>
+    </div>
+    <div class="gallery-item" data-caption="Snowy Peaks">
+        <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?w=600" alt="Snowy Peaks">
+        <div class="gallery-caption">Snowy Peaks</div>
+    </div>
+    <div class="gallery-item" data-caption="City Skyline">
+        <img src="https://images.unsplash.com/photo-1477959858617-67f30bc75b82?w=600" alt="City Skyline">
+        <div class="gallery-caption">City Skyline</div>
+    </div>
+</div>
+
+<!-- Modal Container -->
+<div class="modal-overlay" id="modal-overlay">
+    <div class="modal-card" id="modal-card">
+        <button class="btn-close" id="btn-close">&times;</button>
+        <img id="modal-img" src="" alt="Enlarged Preview">
+        <div class="modal-title" id="modal-caption"></div>
+    </div>
+</div>
+
+<script src="q5_image_gallery_modal.js"></script>
+</body>
+</html>

@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Q6: Real-Time Table Filter</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #f8fafc;
+            padding: 40px;
+            display: flex;
+            justify-content: center;
+        }
+        .container {
+            background: #fff;
+            padding: 28px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.06);
+            width: 100%;
+            max-width: 650px;
+        }
+        h2 {
+            margin-top: 0;
+            color: #1e293b;
+        }
+        .search-input {
+            width: 100%;
+            box-sizing: border-box;
+            padding: 10px 14px;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font-size: 14px;
+            margin-bottom: 20px;
+            outline: none;
+        }
+        .search-input:focus {
+            border-color: #2563eb;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        th, td {
+            text-align: left;
+            padding: 12px 14px;
+            border-bottom: 1px solid #e2e8f0;
+        }
+        th {
+            background: #f1f5f9;
+            color: #334155;
+            font-weight: 600;
+        }
+        tr:hover {
+            background: #f8fafc;
+        }
+        .no-results {
+            text-align: center;
+            padding: 20px;
+            color: #ef4444;
+            font-weight: 600;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>Student Directory</h2>
+    <input type="text" id="search-box" class="search-input" placeholder="Search by name, branch, or CGPA..." />
+
+    <table id="students-table">
+        <thead>
+            <tr>
+                <th>Student Name</th>
+                <th>Branch</th>
+                <th>CGPA</th>
+            </tr>
+        </thead>
+        <tbody id="students-tbody">
+            <tr>
+                <td>Aarav Sharma</td>
+                <td>Computer Science</td>
+                <td>9.2</td>
+            </tr>
+            <tr>
+                <td>Ananya Patel</td>
+                <td>Information Technology</td>
+                <td>8.9</td>
+            </tr>
+            <tr>
+                <td>Rohan Iyer</td>
+                <td>Mechanical Engineering</td>
+                <td>8.4</td>
+            </tr>
+            <tr>
+                <td>Pooja Nair</td>
+                <td>Electronics & Comm</td>
+                <td>9.5</td>
+            </tr>
+            <tr>
+                <td>Vikram Verma</td>
+                <td>Civil Engineering</td>
+                <td>7.8</td>
+            </tr>
+            <tr>
+                <td>Neha Gupta</td>
+                <td>Computer Science</td>
+                <td>9.0</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div id="no-results-msg" class="no-results">No results found</div>
+</div>
+
+<script src="q6_realtime_table_filter.js"></script>
+</body>
+</html>
